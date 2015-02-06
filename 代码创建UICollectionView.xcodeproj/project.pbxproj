@@ -19,6 +19,10 @@
 		C52C5FB41A846A7200E70996 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C52C5F9C1A846A7100E70996 /* UIKit.framework */; };
 		C52C5FBC1A846A7200E70996 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C52C5FBA1A846A7200E70996 /* InfoPlist.strings */; };
 		C52C5FBE1A846A7200E70996 /* ____UICollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C52C5FBD1A846A7200E70996 /* ____UICollectionViewTests.m */; };
+		C5AE26191A846A9F00C4DB28 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AE26181A846A9F00C4DB28 /* ViewController.m */; };
+		C5AE261C1A846B1E00C4DB28 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AE261B1A846B1E00C4DB28 /* CollectionViewCell.m */; };
+		C5AE261F1A846B8E00C4DB28 /* AdvertisingColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AE261E1A846B8E00C4DB28 /* AdvertisingColumn.m */; };
+		C5AE26211A846FC800C4DB28 /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = C5AE26201A846FC800C4DB28 /* cat.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,13 @@
 		C52C5FB91A846A7200E70996 /* 代码创建UICollectionViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "代码创建UICollectionViewTests-Info.plist"; sourceTree = "<group>"; };
 		C52C5FBB1A846A7200E70996 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C52C5FBD1A846A7200E70996 /* ____UICollectionViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____UICollectionViewTests.m"; sourceTree = "<group>"; };
+		C5AE26171A846A9F00C4DB28 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C5AE26181A846A9F00C4DB28 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C5AE261A1A846B1E00C4DB28 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		C5AE261B1A846B1E00C4DB28 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		C5AE261D1A846B8E00C4DB28 /* AdvertisingColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingColumn.h; sourceTree = "<group>"; };
+		C5AE261E1A846B8E00C4DB28 /* AdvertisingColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingColumn.m; sourceTree = "<group>"; };
+		C5AE26201A846FC800C4DB28 /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +88,13 @@
 		C52C5F8C1A846A7100E70996 = {
 			isa = PBXGroup;
 			children = (
+				C5AE26201A846FC800C4DB28 /* cat.png */,
+				C5AE261D1A846B8E00C4DB28 /* AdvertisingColumn.h */,
+				C5AE261E1A846B8E00C4DB28 /* AdvertisingColumn.m */,
+				C5AE261A1A846B1E00C4DB28 /* CollectionViewCell.h */,
+				C5AE261B1A846B1E00C4DB28 /* CollectionViewCell.m */,
+				C5AE26171A846A9F00C4DB28 /* ViewController.h */,
+				C5AE26181A846A9F00C4DB28 /* ViewController.m */,
 				C52C5F9E1A846A7100E70996 /* 代码创建UICollectionView */,
 				C52C5FB71A846A7200E70996 /* 代码创建UICollectionViewTests */,
 				C52C5F971A846A7100E70996 /* Frameworks */,
@@ -219,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5AE26211A846FC800C4DB28 /* cat.png in Resources */,
 				C52C5FA31A846A7100E70996 /* InfoPlist.strings in Resources */,
 				C52C5FAB1A846A7100E70996 /* Images.xcassets in Resources */,
 			);
@@ -239,8 +258,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5AE26191A846A9F00C4DB28 /* ViewController.m in Sources */,
 				C52C5FA91A846A7100E70996 /* AppDelegate.m in Sources */,
+				C5AE261C1A846B1E00C4DB28 /* CollectionViewCell.m in Sources */,
 				C52C5FA51A846A7100E70996 /* main.m in Sources */,
+				C5AE261F1A846B8E00C4DB28 /* AdvertisingColumn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +459,7 @@
 				C52C5FC31A846A7200E70996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C52C5FC41A846A7200E70996 /* Build configuration list for PBXNativeTarget "代码创建UICollectionViewTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +468,7 @@
 				C52C5FC61A846A7200E70996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
