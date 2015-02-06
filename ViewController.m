@@ -28,15 +28,20 @@
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     flowLayout.headerReferenceSize = CGSizeMake(fDeviceWidth, AD_height+10);//头部
     self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, fDeviceWidth, fDeviceHeight) collectionViewLayout:flowLayout];
+    
+    //设置代理
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    [self.view addSubview:self.collectionView];
+    
+    
+    
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
     //注册cell和ReusableView（相当于头部）
     [self.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"ReusableView"];
-    //设置代理
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
-    [self.view addSubview:self.collectionView];
+    
     
     /*
      ***广告栏
@@ -118,7 +123,7 @@
     //图片为正方形，边长：(fDeviceWidth-20)/2-5-5 所以总高(fDeviceWidth-20)/2-5-5 +20+30+5+5 label高20 btn高30 边
     return CGSizeMake((fDeviceWidth-20)/2, (fDeviceWidth-20)/2+50);
 }
-//定义每个UICollectionView 的 margin
+//定义每个UICollectionView 的间距
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
     return UIEdgeInsetsMake(0, 5, 5, 5);

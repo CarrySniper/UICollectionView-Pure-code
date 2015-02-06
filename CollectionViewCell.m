@@ -17,8 +17,6 @@
         // Initialization code
         self.backgroundColor = [UIColor purpleColor];
         
-        
-        
         self.imgView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 5, CGRectGetWidth(self.frame)-10, CGRectGetWidth(self.frame)-10)];
         self.imgView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [self addSubview:self.imgView];

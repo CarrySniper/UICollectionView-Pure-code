@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import "AdvertisingColumn.h"
+#import "AdvertisingColumn.h"//头部滚动的，不需要可以去掉
 
 @interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>{
     AdvertisingColumn *_headerView;
