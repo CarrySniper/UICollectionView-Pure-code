@@ -1,5 +1,5 @@
 # UICollectionView-Pure-code
-使用纯代码创建UICollectionView，自定义cell，添加类似tableViewHeader的头部。
+使用纯代码创建UICollectionView，自定义cell，添加类似tableViewHeader的头部。主要代码在ViewController.m文件。
 
  ![](https://github.com/cjq002/UICollectionView-Pure-code/raw/master/IMAGE/demo.png) 
 ```
@@ -38,7 +38,8 @@
     }
     return _collectionView;
 }
-
+```
+```
 #pragma mark - UICollectionView delegate dataSource
 #pragma mark 定义展示的UICollectionViewCell的个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -76,7 +77,8 @@
     [headerView addSubview:_headerView];//头部广告栏
     return headerView;
 }
-
+```
+```
 #pragma mark UICollectionView被选中时调用的方法
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
