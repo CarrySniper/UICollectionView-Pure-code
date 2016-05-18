@@ -61,9 +61,7 @@
     static NSString *identify = @"cell";
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
     [cell sizeToFit];
-    if (!cell) {
-        NSLog(@"无法创建CollectionViewCell时打印，自定义的cell就不可能进来了。");
-    }
+    
     cell.imgView.image = [UIImage imageNamed:@"cat.png"];
     cell.text.text = [NSString stringWithFormat:@"Cell %ld",indexPath.item];
     
