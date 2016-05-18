@@ -47,7 +47,8 @@ static float AD_height = 150;//广告栏高度
 }
 
 #pragma mark - 创建collectionView并设置代理
-- (UICollectionView *)collectionView{
+- (UICollectionView *)collectionView
+{
     if (_collectionView == nil) {
         
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -83,24 +84,24 @@ static float AD_height = 150;//广告栏高度
 }
 
 #pragma mark - 定时滚动scrollView
--(void)viewDidAppear:(BOOL)animated{//显示窗口
+-(void)viewDidAppear:(BOOL)animated {//显示窗口
     [super viewDidAppear:animated];
     //    [NSThread sleepForTimeInterval:3.0f];//睡眠，所有操作都不起作用
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [_headerView openTimer];//开启定时器
     });
 }
--(void)viewWillDisappear:(BOOL)animated{//将要隐藏窗口  setModalTransitionStyle=UIModalTransitionStyleCrossDissolve时是不隐藏的，故不执行
+-(void)viewWillDisappear:(BOOL)animated {//将要隐藏窗口  setModalTransitionStyle=UIModalTransitionStyleCrossDissolve时是不隐藏的，故不执行
     [super viewWillDisappear:animated];
     if (_headerView.totalNum>1) {
         [_headerView closeTimer];//关闭定时器
     }
 }
 #pragma mark - scrollView也是适用于tableView的cell滚动 将开始和将要结束滚动时调用
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [_headerView closeTimer];//关闭定时器
 }
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
     if (_headerView.totalNum>1) {
         [_headerView openTimer];//开启定时器
     }
@@ -125,18 +126,16 @@ static float AD_height = 150;//广告栏高度
     static NSString *identify = @"cell";
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
     [cell sizeToFit];
-    if (!cell) {
-        NSLog(@"无法创建CollectionViewCell时打印，自定义的cell就不可能进来了。");
-    }
+
     cell.imgView.image = [UIImage imageNamed:@"cat.png"];
-    cell.text.text = [NSString stringWithFormat:@"Cell %ld",indexPath.row];
-    
+    cell.text.text = [NSString stringWithFormat:@"Cell %ld",indexPath.item];
+    //按钮事件就不实现了……
     return cell;
 }
 
 #pragma mark 头部显示的内容
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
     UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:
                                             UICollectionElementKindSectionHeader withReuseIdentifier:@"ReusableView" forIndexPath:indexPath];
     
@@ -147,9 +146,8 @@ static float AD_height = 150;//广告栏高度
 #pragma mark UICollectionView被选中时调用的方法
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"选择%ld",indexPath.row);
+    NSLog(@"选择%ld",indexPath.item);
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
