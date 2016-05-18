@@ -22,8 +22,6 @@ static float AD_height = 150;//广告栏高度
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //导航栏半透明设置与否
-    self.navigationController.navigationBar.translucent = NO;
     //导航栏背景颜色
     [self.navigationController.navigationBar setBarTintColor:[UIColor orangeColor]];
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor],NSForegroundColorAttributeName,[UIFont boldSystemFontOfSize:20.0f],NSFontAttributeName, nil]];
@@ -48,7 +46,7 @@ static float AD_height = 150;//广告栏高度
     
 }
 
-#pragma mark 创建collectionView并设置代理
+#pragma mark - 创建collectionView并设置代理
 - (UICollectionView *)collectionView{
     if (_collectionView == nil) {
         
@@ -84,7 +82,7 @@ static float AD_height = 150;//广告栏高度
     return _collectionView;
 }
 
-#pragma mark 定时滚动scrollView
+#pragma mark - 定时滚动scrollView
 -(void)viewDidAppear:(BOOL)animated{//显示窗口
     [super viewDidAppear:animated];
     //    [NSThread sleepForTimeInterval:3.0f];//睡眠，所有操作都不起作用
@@ -107,7 +105,6 @@ static float AD_height = 150;//广告栏高度
         [_headerView openTimer];//开启定时器
     }
 }
-//===========================================================================================
 
 #pragma mark - UICollectionView delegate dataSource
 #pragma mark 定义展示的UICollectionViewCell的个数
@@ -150,8 +147,6 @@ static float AD_height = 150;//广告栏高度
 #pragma mark UICollectionView被选中时调用的方法
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    UICollectionViewCell * cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    //    cell.backgroundColor = [UIColor redColor];
     NSLog(@"选择%ld",indexPath.row);
 }
 
