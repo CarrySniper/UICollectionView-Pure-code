@@ -14,6 +14,7 @@
     AdvertisingColumn *_headerView;
     
 }
-@property (nonatomic,strong)UICollectionView *collectionView;
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
+
