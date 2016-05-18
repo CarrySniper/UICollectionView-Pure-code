@@ -2,8 +2,9 @@
 使用纯代码创建UICollectionView，自定义cell，添加类似tableViewHeader的头部。主要代码在ViewController.m文件。
 
  ![](https://github.com/cjq002/UICollectionView-Pure-code/raw/master/IMAGE/demo.png) 
-```
+
 #pragma mark - 创建collectionView并设置代理
+```
 - (UICollectionView *)collectionView{
     if (_collectionView == nil) {
         
@@ -39,8 +40,9 @@
     return _collectionView;
 }
 ```
-```
+
 #pragma mark - UICollectionView delegate dataSource
+```
 #pragma mark 定义展示的UICollectionViewCell的个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -63,7 +65,7 @@
         NSLog(@"无法创建CollectionViewCell时打印，自定义的cell就不可能进来了。");
     }
     cell.imgView.image = [UIImage imageNamed:@"cat.png"];
-    cell.text.text = [NSString stringWithFormat:@"Cell %ld",indexPath.row];
+    cell.text.text = [NSString stringWithFormat:@"Cell %ld",indexPath.item];
     
     return cell;
 }
@@ -78,10 +80,11 @@
     return headerView;
 }
 ```
-```
+
 #pragma mark UICollectionView被选中时调用的方法
+```
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"选择%ld",indexPath.row);
+    NSLog(@"选择%ld",indexPath.item);
 }
 ```
