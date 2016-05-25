@@ -88,12 +88,11 @@ static float AD_height = 150;//广告栏高度
 #pragma mark - 定时滚动scrollView
 -(void)viewDidAppear:(BOOL)animated {//显示窗口
     [super viewDidAppear:animated];
-    //    [NSThread sleepForTimeInterval:3.0f];//睡眠，所有操作都不起作用
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [_headerView openTimer];//开启定时器
     });
 }
--(void)viewWillDisappear:(BOOL)animated {//将要隐藏窗口  setModalTransitionStyle=UIModalTransitionStyleCrossDissolve时是不隐藏的，故不执行
+-(void)viewWillDisappear:(BOOL)animated {//将要隐藏窗口
     [super viewWillDisappear:animated];
     if (_headerView.totalNum>1) {
         [_headerView closeTimer];//关闭定时器

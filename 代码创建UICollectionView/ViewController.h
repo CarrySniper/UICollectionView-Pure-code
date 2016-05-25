@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
 #import "AdvertisingColumn.h"//头部滚动的，不需要可以去掉
 
 @interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>{
-    AdvertisingColumn *_headerView;
-    NSMutableArray *_cellArray;
+    AdvertisingColumn *_headerView; //广告栏
+    NSMutableArray *_cellArray;     //collectionView数据
 }
 
 @property (nonatomic, strong) UICollectionView *collectionView;
