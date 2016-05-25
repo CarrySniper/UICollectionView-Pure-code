@@ -44,6 +44,8 @@ static float AD_height = 150;//广告栏高度
     NSArray *imgArray = [NSArray arrayWithObjects:@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png", nil];
     [_headerView setArray:imgArray];
     
+    //collectionView数据
+    _cellArray = [imgArray mutableCopy];
 }
 
 #pragma mark - 创建collectionView并设置代理
@@ -111,7 +113,7 @@ static float AD_height = 150;//广告栏高度
 #pragma mark 定义展示的UICollectionViewCell的个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 30;
+    return [_cellArray count];
 }
 
 #pragma mark 定义展示的Section的个数
@@ -127,7 +129,7 @@ static float AD_height = 150;//广告栏高度
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
     [cell sizeToFit];
 
-    cell.imgView.image = [UIImage imageNamed:@"cat.png"];
+    cell.imgView.image = [UIImage imageNamed:_cellArray[indexPath.item]];
     cell.text.text = [NSString stringWithFormat:@"Cell %ld",indexPath.item];
     //按钮事件就不实现了……
     return cell;

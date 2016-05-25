@@ -12,8 +12,9 @@
 
 @interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>{
     AdvertisingColumn *_headerView;
-    
+    NSMutableArray *_cellArray;
 }
+
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
