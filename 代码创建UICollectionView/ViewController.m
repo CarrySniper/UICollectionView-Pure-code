@@ -28,7 +28,7 @@ static float AD_height = 150;//广告栏高度
     self.navigationItem.title = @"自定义collectionView";
     
     /**
-     *  创建collectionView self自动调用set get方法
+     *  创建collectionView self自动调用setter getter方法
      */
     [self.view addSubview:self.collectionView];
     
