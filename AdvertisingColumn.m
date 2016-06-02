@@ -69,7 +69,7 @@
         }
         int index = newOffset.x / CGRectGetWidth(_scrollView.frame);   //当前是第几个视图
         newOffset.x = index * CGRectGetWidth(_scrollView.frame);
-        _imageNum.text = [NSString stringWithFormat:@"%d / %ld",index+1,_totalNum];
+        
         [_scrollView setContentOffset:newOffset animated:YES];
     }else{
         [_timer setFireDate:[NSDate distantFuture]];//关闭定时器
@@ -83,6 +83,7 @@
     }else {
         int index = fabs(scrollView.contentOffset.x) / scrollView.frame.size.width;   //当前是第几个视图
         _pageControl.currentPage = index;
+        _imageNum.text = [NSString stringWithFormat:@"%d / %ld",index+1,_totalNum];
         for (UIView *view in scrollView.subviews) {
             if(view.tag == index){
                 
